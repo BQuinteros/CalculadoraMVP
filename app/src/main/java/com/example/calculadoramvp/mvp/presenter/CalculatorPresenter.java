@@ -13,11 +13,12 @@ public class CalculatorPresenter {
     }
 
     public void onButtonPressed(){
-        //SI ES UN =
-        //modelo realizo la cuenta
-        //view muestro el resultado
-        //SI ES DISTINTO
-        //view muestro numero
+        //TODO
+        /*IF IS =
+        IN MODEL I REALIZE A COUNT
+        MODIFIED THE VIEW TO SHOW THE RESULT
+        IF IS NOT =
+        IN THE VIEW SHOW NUMBERS*/
     }
 
     public void onResetButtonPressed(){
