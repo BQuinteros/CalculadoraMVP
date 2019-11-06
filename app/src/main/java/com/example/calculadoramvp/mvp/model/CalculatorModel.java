@@ -23,12 +23,12 @@ public class CalculatorModel {
         result = 0;
     }
 
-    public void setFirstOperand(String operand_1) {
-        this.firstOperand = operand_1;
+    public void setFirstOperand(String firstOperand) {
+        this.firstOperand = firstOperand;
     }
 
-    public void setSecondOperand(String operand_2) {
-        this.secondOperand = operand_2;
+    public void setSecondOperand(String secondOperand) {
+        this.secondOperand = secondOperand;
     }
 
     public void setOperator(String operator) {
