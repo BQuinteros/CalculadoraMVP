@@ -17,8 +17,6 @@ public class CalculatorView extends ActivityView {
     public CalculatorView(Activity activity){
         super(activity);
         ButterKnife.bind(this,activity);
-
-        //TODO
     }
 
     public void setVisor(String visor) {

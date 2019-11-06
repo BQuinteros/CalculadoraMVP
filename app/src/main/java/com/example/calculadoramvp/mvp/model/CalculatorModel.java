@@ -1,5 +1,7 @@
 package com.example.calculadoramvp.mvp.model;
 
+import static com.example.calculadoramvp.Utils.EMPTY_STRING;
+
 public class CalculatorModel {
 
     private String operand_1;
@@ -8,16 +10,16 @@ public class CalculatorModel {
     private float result;
 
     public void cleanVisor() {
-        operand_1 = "";
-        operand_2 = "";
-        operator = "";
+        operand_1 = EMPTY_STRING;
+        operand_2 = EMPTY_STRING;
+        operator = EMPTY_STRING;
         result = 0;
     }
 
     public CalculatorModel(){
-        operand_1 = "";
-        operand_2 = "";
-        operator = "";
+        operand_1 = EMPTY_STRING;
+        operand_2 = EMPTY_STRING;
+        operator = EMPTY_STRING;
         result = 0;
     }
 

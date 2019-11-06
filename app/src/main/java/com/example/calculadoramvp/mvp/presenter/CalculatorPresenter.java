@@ -5,7 +5,8 @@ import com.example.calculadoramvp.mvp.view.CalculatorView;
 
 import android.widget.Toast;
 
-import com.example.calculadoramvp.R;
+import static com.example.calculadoramvp.Utils.EMPTY_STRING;
+import static com.example.calculadoramvp.Utils.TOAST_MSG_FIRST_OPERAND;
 
 public class CalculatorPresenter {
 
@@ -24,7 +25,7 @@ public class CalculatorPresenter {
             model.setOperand_1(number);
             view.setVisor(number);
         }
-        else if (model.getOperand_1() != "" && model.getOperator()=="") {
+        else if (model.getOperand_1() != EMPTY_STRING && model.getOperator()=="") {
             model.setOperand_1(model.getOperand_1() + number);
             view.setVisor(model.getOperand_1());
         }
@@ -36,12 +37,12 @@ public class CalculatorPresenter {
 
     public void onOperatorPressed(String operator){
 
-        if (model.getOperand_1() != "" && model.getOperand_2()==""){
+        if (model.getOperand_1() != EMPTY_STRING && model.getOperand_2()==EMPTY_STRING){
             model.setOperator(operator);
             view.setVisor(model.getOperand_1()+model.getOperator());
         }
         else {
-            Toast.makeText(view , "Please insert the first operand", Toast.LENGTH_SHORT).show();
+            Toast.makeText(view , TOAST_MSG_FIRST_OPERAND, Toast.LENGTH_SHORT).show();
         }
     }
 
