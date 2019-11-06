@@ -1,15 +1,12 @@
 package com.example.calculadoramvp.mvp.presenter;
-
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
-
 import android.widget.Toast;
-
-import static com.example.calculadoramvp.Utils.EMPTY_STRING;
-import static com.example.calculadoramvp.Utils.TOAST_MSG_FIRST_OPERAND;
+import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
+import static com.example.calculadoramvp.utils.Utils.PLUS;
+import static com.example.calculadoramvp.utils.Utils.TOAST_MSG_FIRST_OPERAND;
 
 public class CalculatorPresenter {
-
     CalculatorView view;
     CalculatorModel model;
 
@@ -20,26 +17,24 @@ public class CalculatorPresenter {
     }
 
     public void onNumberPressed(String number){
-
-        if (model.getOperand_1()==""){
-            model.setOperand_1(number);
+        if (model.getFirstOperand()==EMPTY_STRING){
+            model.setFirstOperand(number);
             view.setVisor(number);
         }
-        else if (model.getOperand_1() != EMPTY_STRING && model.getOperator()=="") {
-            model.setOperand_1(model.getOperand_1() + number);
-            view.setVisor(model.getOperand_1());
+        else if (model.getFirstOperand() != EMPTY_STRING && model.getOperator()==EMPTY_STRING) {
+            model.setFirstOperand(model.getFirstOperand() + number);
+            view.setVisor(model.getFirstOperand());
         }
         else {
-            model.setOperand_2(model.getOperand_2() + number);
-            view.setVisor(model.getOperand_1() + model.getOperator() + model.getOperand_2());
+            model.setSecondOperand(model.getSecondOperand() + number);
+            view.setVisor(model.getFirstOperand() + model.getOperator() + model.getSecondOperand());
         }
     }
 
     public void onOperatorPressed(String operator){
-
-        if (model.getOperand_1() != EMPTY_STRING && model.getOperand_2()==EMPTY_STRING){
+        if (model.getFirstOperand() != EMPTY_STRING && model.getSecondOperand()==EMPTY_STRING){
             model.setOperator(operator);
-            view.setVisor(model.getOperand_1()+model.getOperator());
+            view.setVisor(model.getFirstOperand()+model.getOperator());
         }
         else {
             Toast.makeText(view , TOAST_MSG_FIRST_OPERAND, Toast.LENGTH_SHORT).show();
@@ -47,11 +42,11 @@ public class CalculatorPresenter {
     }
 
     public void onEqualsPressed(){
-
-        if (model.getOperator()=="+"){
-            model.setResult(Integer.parseInt(model.getOperand_1()) + Integer.parseInt(model.getOperand_2()));
+        if (model.getOperator()==PLUS){
+            model.setResult(Integer.parseInt(model.getFirstOperand()) + Integer.parseInt(model.getSecondOperand()));
             view.showResult(model.getResult());
         }
+        //TODO others operations like minus, multiplication and division
 
     }
 }
