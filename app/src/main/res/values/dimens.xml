@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_layout_width" >75dp</dimen>
-    <dimen name="button_layout_height">75dp</dimen>
+    <dimen name="button_layout_width" >100dp</dimen>
+    <dimen name="button_layout_height">100dp</dimen>
     <dimen name="button_layout_margin_top">150dp</dimen>
     <dimen name="visor_heigth">100dp</dimen>
     <dimen name="visor_operation">50dp</dimen>
