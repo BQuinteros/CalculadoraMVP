@@ -3,7 +3,13 @@ package com.example.calculadoramvp.mvp.presenter;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
 import android.widget.Toast;
-import static com.example.calculadoramvp.utils.Utils.*;
+
+import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
+import static com.example.calculadoramvp.utils.Utils.MINUS;
+import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
+import static com.example.calculadoramvp.utils.Utils.PLUS;
+import static com.example.calculadoramvp.utils.Utils.TOAST_ERROR_MSG;
+import static com.example.calculadoramvp.utils.Utils.TOAST_MSG_FIRST_OPERAND;
 
 
 public class CalculatorPresenter {

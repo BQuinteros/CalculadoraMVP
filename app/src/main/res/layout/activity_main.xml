@@ -39,7 +39,7 @@
         android:layout_width="@dimen/button_layout_width"
         android:layout_height="@dimen/button_layout_height"
         android:text="@string/zero"
-        android:background="#81c8c0"
+        android:background="@color/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_point"
         app:layout_constraintStart_toStartOf="parent"
