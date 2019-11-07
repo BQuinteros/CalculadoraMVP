@@ -8,11 +8,12 @@ import com.example.calculadoramvp.mvp.presenter.CalculatorPresenter;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
 
 public class MainActivity extends AppCompatActivity {
-    @Override
+    private CalculatorPresenter presenter;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CalculatorPresenter presenter = new CalculatorPresenter(new CalculatorModel(), new CalculatorView(this));
+        presenter = new CalculatorPresenter(new CalculatorModel(), new CalculatorView(this));
 
     }
 }

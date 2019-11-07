@@ -3,7 +3,6 @@ package com.example.calculadoramvp.mvp.model;
 import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
 
 public class CalculatorModel {
-
     private String firstOperand;
     private String secondOperand;
     private String operator;
