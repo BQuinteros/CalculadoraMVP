@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
@@ -10,24 +9,32 @@
     <TextView
         android:id="@+id/visor_operation"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/visor_operation"
-        android:textAlignment="gravity"
+        android:layout_height="@dimen/visor_operation_dim"
+        android:layout_marginTop="@dimen/marginOperation"
+        android:layout_marginLeft="@dimen/marginOperation"
+        android:textSize="@dimen/textOperationSize"
         app:layout_constraintBottom_toTopOf="@id/visor_result"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage"
+        android:layout_marginStart="@dimen/marginOperation" />
 
     <TextView
         android:id="@+id/visor_result"
         android:layout_width="match_parent"
         android:layout_height="@dimen/visor_heigth"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:gravity="end"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/textResultSize"
         app:layout_constraintBottom_toTopOf="@id/button_eight"
-        app:layout_constraintTop_toTopOf="@id/visor_operation" />
+        app:layout_constraintTop_toTopOf="@id/visor_operation"
+        tools:ignore="SpUsage" />
 
     <Button
         android:id="@+id/button_cero"
         android:layout_width="@dimen/button_layout_width"
         android:layout_height="@dimen/button_layout_height"
-        android:text="@string/cero"
+        android:text="@string/zero"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_point"
         app:layout_constraintStart_toStartOf="parent"
