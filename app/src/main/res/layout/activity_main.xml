@@ -15,7 +15,6 @@
         android:textSize="@dimen/textOperationSize"
         app:layout_constraintBottom_toTopOf="@id/visor_result"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpUsage"
         android:layout_marginStart="@dimen/marginOperation" />
 
     <TextView
@@ -27,8 +26,7 @@
         android:textAlignment="textEnd"
         android:textSize="@dimen/textResultSize"
         app:layout_constraintBottom_toTopOf="@id/button_eight"
-        app:layout_constraintTop_toTopOf="@id/visor_operation"
-        tools:ignore="SpUsage" />
+        app:layout_constraintTop_toTopOf="@id/visor_operation" />
 
     <Button
         android:id="@+id/button_cero"
