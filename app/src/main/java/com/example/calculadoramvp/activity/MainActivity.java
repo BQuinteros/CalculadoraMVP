@@ -7,8 +7,6 @@ import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.presenter.CalculatorPresenter;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
 
-
-
 public class MainActivity extends AppCompatActivity {
 
     private CalculatorPresenter presenter;

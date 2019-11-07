@@ -1,8 +1,7 @@
 package com.example.calculadoramvp.mvp.presenter;
+
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
-
-import android.util.Log;
 import android.widget.Toast;
 import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
 import static com.example.calculadoramvp.utils.Utils.MINUS;
