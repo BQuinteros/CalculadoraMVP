@@ -31,7 +31,6 @@ public class CalculatorPresenter {
         } else {
             model.setSecondOperand(model.getSecondOperand() + number);
             view.setVisor(model.getFirstOperand() + model.getOperator() + model.getSecondOperand());
-            //view.enableEquals();
         }
     }
 
@@ -43,7 +42,7 @@ public class CalculatorPresenter {
     }
 
     public void onEqualsPressed() {
-        if (model.getOperator() != EMPTY_STRING){
+        if (model.getOperator() != EMPTY_STRING && model.getSecondOperand() != EMPTY_STRING){
             switch (model.getOperator()) {
                 case PLUS:
                     model.setResult(Float.parseFloat(model.getFirstOperand()) + Float.parseFloat(model.getSecondOperand()));
@@ -55,22 +54,20 @@ public class CalculatorPresenter {
                     model.setResult(Float.parseFloat(model.getFirstOperand()) * Float.parseFloat(model.getSecondOperand()));
                     break;
                 case DIVIDE:
-                    if (model.getSecondOperand() != ZERO){
+                    if (!model.getSecondOperand().equals(ZERO)){
                         model.setResult(Float.parseFloat(model.getFirstOperand()) / Float.parseFloat(model.getSecondOperand()));}
                     else{
                         view.showMessageDivide();
-                        view.setVisor(EMPTY_STRING);}
+                        view.setVisor(EMPTY_STRING);
+                        }
                 default:
-                    view.showMessageOperation();
                     break;
 
             }
-        //view.disableEquals();
         view.setVisor(EMPTY_STRING);
         view.showResult(model.getResult());
         model.cleanVisor();
         }
     }
-
 }
 

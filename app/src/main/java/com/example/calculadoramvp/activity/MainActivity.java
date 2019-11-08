@@ -1,11 +1,7 @@
 package com.example.calculadoramvp.activity;
 
-import android.graphics.Point;
-import android.view.View;
-import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.example.calculadoramvp.R;

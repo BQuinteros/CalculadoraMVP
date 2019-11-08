@@ -10,4 +10,6 @@
     <dimen name="visor_operation_dim">50dp</dimen>
     <dimen name="textResultSize">50sp</dimen>
     <dimen name="button_text_size">25sp</dimen>
+    <dimen name="button_clear_width">50dp</dimen>
+    <dimen name="button_clear_height">50dp</dimen>
 </resources>

@@ -2,10 +2,8 @@ package com.example.calculadoramvp.utils;
 
 public class Utils {
     public static final String EMPTY_STRING = "";
-    public static final String TOAST_MSG_FIRST_OPERAND = "Please insert the first operand";
     public static final String TOAST_ERROR_OPERATOR_MSG = "Please insert an operator";
     public static final String TOAST_MSG_DIVIDE = "Error to divide with a 0";
-    public static final String TOAST_MSG_EQUAL = "Error to equal without operator";
     public static final String PLUS = "+";
     public static final String MINUS = "-";
     public static final String MULTIPLICATION = "*";
@@ -20,6 +18,4 @@ public class Utils {
     public static final String EIGHT = "8";
     public static final String NINE = "9";
     public static final String DIVIDE = "/";
-    public static final String EQUAL = "=";
-    public static final String POINT = ".";
 }
