@@ -1,5 +1,8 @@
 package com.example.calculadoramvp.mvp.presenter;
 
+import android.widget.Button;
+import butterknife.BindView;
+import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
 import android.widget.Toast;
@@ -8,14 +11,15 @@ import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
 import static com.example.calculadoramvp.utils.Utils.MINUS;
 import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
 import static com.example.calculadoramvp.utils.Utils.PLUS;
-import static com.example.calculadoramvp.utils.Utils.TOAST_ERROR_MSG;
+import static com.example.calculadoramvp.utils.Utils.TOAST_ERROR_OPERATOR_MSG;
 import static com.example.calculadoramvp.utils.Utils.TOAST_MSG_FIRST_OPERAND;
 
 
 public class CalculatorPresenter {
     private CalculatorView view;
     private CalculatorModel model;
-
+    @BindView(R.id.button_zero)
+    Button equal;
 
     public CalculatorPresenter(CalculatorModel model, CalculatorView view) {
         this.model = model;
@@ -32,6 +36,7 @@ public class CalculatorPresenter {
         } else {
             model.setSecondOperand(model.getSecondOperand() + number);
             view.setVisor(model.getFirstOperand() + model.getOperator() + model.getSecondOperand());
+            view.enableEquals();
         }
     }
 
@@ -39,9 +44,14 @@ public class CalculatorPresenter {
         if (!model.getFirstOperand().equals(EMPTY_STRING) && model.getSecondOperand().equals(EMPTY_STRING)) {
             model.setOperator(operator);
             view.setVisor(model.getFirstOperand() + model.getOperator());
+        } else if (model.getFirstOperand().equals(EMPTY_STRING) && model.getSecondOperand().equals(EMPTY_STRING)) {
+            model.setFirstOperand("0");
+            model.setOperator(operator);
+            view.setVisor(model.getOperator());
         } else {
             Toast.makeText(view, TOAST_MSG_FIRST_OPERAND, Toast.LENGTH_SHORT).show();
         }
+        view.disableEquals();
     }
 
     public void onEqualsPressed() {
@@ -56,12 +66,14 @@ public class CalculatorPresenter {
                 model.setResult(Integer.parseInt(model.getFirstOperand()) * Integer.parseInt(model.getSecondOperand()));
                 break;
             default:
-                Toast.makeText(view, TOAST_ERROR_MSG, Toast.LENGTH_SHORT).show();
+                Toast.makeText(view, TOAST_ERROR_OPERATOR_MSG, Toast.LENGTH_SHORT).show();
                 break;
-                //TODO divide operation
+            //TODO divide operation
         }
         view.showResult(model.getResult());
         model.cleanVisor();
+        view.disableEquals();
     }
+
 }
 

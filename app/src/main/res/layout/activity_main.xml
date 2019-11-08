@@ -11,14 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/visor_operation_dim"
         android:layout_marginTop="@dimen/marginOperation"
-        android:layout_marginLeft="@dimen/marginOperation"
-        android:textSize="@dimen/textOperationSize"
         android:background="@color/visorColor"
+        android:textSize="@dimen/textOperationSize"
         app:layout_constraintBottom_toTopOf="@id/visor_result"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="@dimen/marginOperation" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/visor_result"
