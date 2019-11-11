@@ -13,10 +13,10 @@ import static com.example.calculadoramvp.utils.Utils.DIVIDE;
 import static com.example.calculadoramvp.utils.Utils.EIGHT;
 import static com.example.calculadoramvp.utils.Utils.FIVE;
 import static com.example.calculadoramvp.utils.Utils.FOUR;
-import static com.example.calculadoramvp.utils.Utils.MINUS;
 import static com.example.calculadoramvp.utils.Utils.NINE;
 import static com.example.calculadoramvp.utils.Utils.ONE;
 import static com.example.calculadoramvp.utils.Utils.PLUS;
+import static com.example.calculadoramvp.utils.Utils.POINT;
 import static com.example.calculadoramvp.utils.Utils.SEVEN;
 import static com.example.calculadoramvp.utils.Utils.SIX;
 import static com.example.calculadoramvp.utils.Utils.THREE;
@@ -84,9 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.button_equal)
-    public void onButtonEqualPressed(){
-        presenter.onEqualsPressed();
-    }
+    public void onButtonEqualPressed(){ presenter.onEqualsPressed(); }
 
     @OnClick(R.id.button_share)
     public void onButtonDividePressed(){
@@ -98,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
         presenter.onOperatorPressed(PLUS);
     }
 
-    @OnClick(R.id.button_subtract)
-    public void onButtonSubtractPressed(){
-        presenter.onOperatorPressed(MINUS);
-    }
+    @OnClick(R.id.button_point)
+    public void onButtonPointPressed(){ presenter.onOperatorPressed(POINT); }
+
 }
