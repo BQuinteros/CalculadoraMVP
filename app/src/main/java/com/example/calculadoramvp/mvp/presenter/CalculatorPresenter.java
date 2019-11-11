@@ -9,6 +9,7 @@ import static com.example.calculadoramvp.utils.Utils.MINUS;
 import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
 import static com.example.calculadoramvp.utils.Utils.PLUS;
 import static com.example.calculadoramvp.utils.Utils.ZERO;
+import static com.example.calculadoramvp.utils.Utils.zeroFloat;
 
 public class CalculatorPresenter {
     private CalculatorView view;
@@ -20,6 +21,10 @@ public class CalculatorPresenter {
     }
 
     public void onNumberPressed(String number) {
+        if (model.getResult() != 0 && model.getOperator().equals(EMPTY_STRING)){
+                model.cleanVisor();
+                view.setVisor(EMPTY_STRING);
+        }
         if (model.getFirstOperand().equals(EMPTY_STRING) && model.getOperator().equals(EMPTY_STRING)) {
             model.setFirstOperand(number);
             view.setVisor(number);
@@ -33,14 +38,22 @@ public class CalculatorPresenter {
     }
 
     public void onOperatorPressed(String operator) {
-        if (!model.getFirstOperand().equals(EMPTY_STRING) && model.getSecondOperand().equals(EMPTY_STRING)) {
+        if (model.getResult() == 0) {
+            if (!model.getFirstOperand().equals(EMPTY_STRING) && model.getSecondOperand().equals(EMPTY_STRING)) {
+                model.setOperator(operator);
+                view.setVisor(model.getFirstOperand() + model.getOperator());
+            }
+        }else {
+            view.setVisor(EMPTY_STRING);
+            model.setFirstOperand(Float.toString(model.getResult()));
             model.setOperator(operator);
+            model.setResult(zeroFloat);
             view.setVisor(model.getFirstOperand() + model.getOperator());
         }
     }
 
     public void onEqualsPressed() {
-        if (model.getOperator() != EMPTY_STRING && model.getSecondOperand() != EMPTY_STRING){
+        if (model.getOperator() != EMPTY_STRING){
             switch (model.getOperator()) {
                 case PLUS:
                     model.setResult(Float.parseFloat(model.getFirstOperand()) + Float.parseFloat(model.getSecondOperand()));
@@ -61,9 +74,9 @@ public class CalculatorPresenter {
                 default:
                     break;
             }
-        view.setVisor(EMPTY_STRING);
         view.showResult(String.valueOf(model.getResult()));
-        model.cleanVisor();
+        model.setSecondOperand(EMPTY_STRING);
+        model.setOperator(EMPTY_STRING);
         }
     }
 

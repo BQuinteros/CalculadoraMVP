@@ -2,6 +2,8 @@ package com.example.calculadoramvp.utils;
 
 public class Utils {
     public static final String EMPTY_STRING = "";
+    public static final float zeroFloat = 0;
+    public static final String POINT = ".";
     public static final String PLUS = "+";
     public static final String MINUS = "-";
     public static final String MULTIPLICATION = "*";
