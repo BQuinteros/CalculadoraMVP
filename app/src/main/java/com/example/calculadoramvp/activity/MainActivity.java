@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonFivePressed(){
         presenter.onNumberPressed(FIVE);
     }
+
     @OnClick(R.id.button_six)
     public void onButtonSixPressed(){
         presenter.onNumberPressed(SIX);
@@ -90,10 +91,6 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_share)
     public void onButtonDividePressed(){
         presenter.onOperatorPressed(DIVIDE);
-    }
-
-    @OnClick(R.id.button_point)
-    public void onButtonPointPressed(){
     }
 
     @OnClick(R.id.button_sum)

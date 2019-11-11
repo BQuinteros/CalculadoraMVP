@@ -3,14 +3,12 @@ package com.example.calculadoramvp.mvp.presenter;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
 
-
 import static com.example.calculadoramvp.utils.Utils.DIVIDE;
 import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
 import static com.example.calculadoramvp.utils.Utils.MINUS;
 import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
 import static com.example.calculadoramvp.utils.Utils.PLUS;
 import static com.example.calculadoramvp.utils.Utils.ZERO;
-
 
 public class CalculatorPresenter {
     private CalculatorView view;
@@ -69,5 +67,6 @@ public class CalculatorPresenter {
         model.cleanVisor();
         }
     }
+
 }
 

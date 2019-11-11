@@ -236,7 +236,7 @@
         android:layout_height="@dimen/button_clear_height"
         android:text="@string/clear"
         android:textSize="@dimen/button_text_size"
-        android:gravity="center_vertical"
+        android:padding="@dimen/button_clear_padding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/visor_result" />
 </androidx.constraintlayout.widget.ConstraintLayout>
