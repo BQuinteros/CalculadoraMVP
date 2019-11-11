@@ -22,7 +22,7 @@ public class CalculatorView extends ActivityView {
         visorOperation.setText(visor);
     }
 
-    public void showResult(float result) {
+    public void showResult(String result) {
         visorResult.setText(String.valueOf(result));
     }
 

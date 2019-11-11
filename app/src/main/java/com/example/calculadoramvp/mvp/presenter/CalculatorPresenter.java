@@ -60,10 +60,9 @@ public class CalculatorPresenter {
                         }
                 default:
                     break;
-
             }
         view.setVisor(EMPTY_STRING);
-        view.showResult(model.getResult());
+        view.showResult(String.valueOf(model.getResult()));
         model.cleanVisor();
         }
     }
@@ -83,11 +82,10 @@ public class CalculatorPresenter {
         }
     }
 
-
     public void onClearLongClicked(){
         model.cleanVisor();
         view.setVisor(EMPTY_STRING);
+        view.showResult(EMPTY_STRING);
     }
-
 }
 

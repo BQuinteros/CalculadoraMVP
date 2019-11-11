@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnLongClick(R.id.button_clear)
-    public void onButtonClearFosused(){
+    public void onButtonClearLongClicked(){
         presenter.onClearLongClicked();
     }
 }
