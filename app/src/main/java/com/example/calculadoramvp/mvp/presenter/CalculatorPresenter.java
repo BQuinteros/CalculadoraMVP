@@ -82,7 +82,7 @@ public class CalculatorPresenter {
         }
     }
 
-    public void onClearLongClicked(){
+    public void onClearAllPressed(){
         model.cleanVisor();
         view.setVisor(EMPTY_STRING);
         view.showResult(EMPTY_STRING);

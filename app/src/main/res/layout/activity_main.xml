@@ -239,4 +239,14 @@
         android:padding="@dimen/button_clear_padding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/visor_result" />
+
+    <Button
+        android:id="@+id/button_clear_all"
+        android:layout_width="@dimen/button_clear_width"
+        android:layout_height="@dimen/button_clear_height"
+        android:text="@string/clear_all"
+        android:textSize="@dimen/button_text_size"
+        android:padding="@dimen/button_clear_padding"
+        app:layout_constraintStart_toEndOf="@id/button_clear"
+        app:layout_constraintBottom_toBottomOf="@id/visor_result" />
 </androidx.constraintlayout.widget.ConstraintLayout>

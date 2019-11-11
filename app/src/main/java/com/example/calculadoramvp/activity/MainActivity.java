@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnFocusChange;
-import butterknife.OnLongClick;
 import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.presenter.CalculatorPresenter;
@@ -115,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
         presenter.onClearPressed();
     }
 
-    @OnLongClick(R.id.button_clear)
-    public void onButtonClearLongClicked(){
-        presenter.onClearLongClicked();
+    @OnClick(R.id.button_clear_all)
+    public void onButtonClearALlPressed(){
+        presenter.onClearAllPressed();
     }
 }
