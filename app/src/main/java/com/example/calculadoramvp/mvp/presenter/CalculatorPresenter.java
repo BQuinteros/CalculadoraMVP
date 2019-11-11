@@ -1,5 +1,8 @@
 package com.example.calculadoramvp.mvp.presenter;
 
+import android.app.Activity;
+
+import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
 
@@ -55,7 +58,7 @@ public class CalculatorPresenter {
                     if (!model.getSecondOperand().equals(ZERO)){
                         model.setResult(Float.parseFloat(model.getFirstOperand()) / Float.parseFloat(model.getSecondOperand()));}
                     else{
-                        view.showMessageDivide();
+                        view.showMessageOperation(R.string.toast_msg_divide);
                         view.setVisor(EMPTY_STRING);
                         }
                 default:

@@ -27,17 +27,10 @@ public class CalculatorView extends ActivityView {
         visorResult.setText(String.valueOf(result));
     }
 
-    public void showMessageOperation(){
+    public void showMessageOperation(int text){
         Activity activity = getActivity();
         if (activity != null) {
-            Toast.makeText(activity, activity.getResources().getString(R.string.toast_error_opeator_msg), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void showMessageDivide(){
-        Activity activity = getActivity();
-        if (activity != null) {
-            Toast.makeText(activity, activity.getResources().getString(R.string.toast_msg_divide), Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, activity.getResources().getText(text), Toast.LENGTH_SHORT).show();
         }
     }
 }

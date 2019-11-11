@@ -25,7 +25,7 @@
         android:background="@color/visorColor"
         android:ellipsize="end"
         android:gravity="end"
-        android:maxLines="1"
+        android:maxLines="@integer/one"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="@dimen/textResultSize"
