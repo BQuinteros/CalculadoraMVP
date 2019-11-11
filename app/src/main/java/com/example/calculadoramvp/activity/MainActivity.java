@@ -4,16 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnFocusChange;
+import butterknife.OnLongClick;
 import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.presenter.CalculatorPresenter;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
-
 import static com.example.calculadoramvp.utils.Utils.DIVIDE;
 import static com.example.calculadoramvp.utils.Utils.EIGHT;
 import static com.example.calculadoramvp.utils.Utils.FIVE;
 import static com.example.calculadoramvp.utils.Utils.FOUR;
 import static com.example.calculadoramvp.utils.Utils.MINUS;
+import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
 import static com.example.calculadoramvp.utils.Utils.NINE;
 import static com.example.calculadoramvp.utils.Utils.ONE;
 import static com.example.calculadoramvp.utils.Utils.PLUS;
@@ -101,5 +103,20 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_subtract)
     public void onButtonSubtractPressed(){
         presenter.onOperatorPressed(MINUS);
+    }
+
+    @OnClick(R.id.button_multiply)
+    public void onButtonMultiplyPressed(){
+        presenter.onOperatorPressed(MULTIPLICATION);
+    }
+
+    @OnClick(R.id.button_clear)
+    public void onButtonClearPressed(){
+        presenter.onClearPressed();
+    }
+
+    @OnLongClick(R.id.button_clear)
+    public void onButtonClearFosused(){
+        presenter.onClearLongClicked();
     }
 }

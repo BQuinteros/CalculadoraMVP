@@ -3,7 +3,6 @@ package com.example.calculadoramvp.mvp.view;
 import android.app.Activity;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.view.base.ActivityView;
 import butterknife.BindView;

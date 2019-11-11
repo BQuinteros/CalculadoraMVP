@@ -3,7 +3,6 @@ package com.example.calculadoramvp.mvp.presenter;
 import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
-
 import static com.example.calculadoramvp.utils.Utils.DIVIDE;
 import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
 import static com.example.calculadoramvp.utils.Utils.MINUS;
@@ -67,6 +66,27 @@ public class CalculatorPresenter {
         view.showResult(model.getResult());
         model.cleanVisor();
         }
+    }
+
+    public void onClearPressed(){
+        if (!model.getSecondOperand().equals(EMPTY_STRING)){
+            model.setSecondOperand(model.getSecondOperand().substring(0,model.getSecondOperand().length()-1));
+            view.setVisor(model.getFirstOperand() + model.getOperator() + model.getSecondOperand());
+        }
+        else if (!model.getOperator().equals(EMPTY_STRING)){
+            model.setOperator(EMPTY_STRING);
+            view.setVisor(model.getFirstOperand());
+        }
+        else if (!model.getFirstOperand().equals(EMPTY_STRING)){
+            model.setFirstOperand(model.getFirstOperand().substring(0,model.getFirstOperand().length()-1));
+            view.setVisor(model.getFirstOperand());
+        }
+    }
+
+
+    public void onClearLongClicked(){
+        model.cleanVisor();
+        view.setVisor(EMPTY_STRING);
     }
 
 }
