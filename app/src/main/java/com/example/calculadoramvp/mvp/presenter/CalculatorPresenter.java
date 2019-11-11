@@ -1,7 +1,5 @@
 package com.example.calculadoramvp.mvp.presenter;
 
-import android.app.Activity;
-
 import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
