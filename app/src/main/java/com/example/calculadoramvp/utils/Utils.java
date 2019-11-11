@@ -2,8 +2,6 @@ package com.example.calculadoramvp.utils;
 
 public class Utils {
     public static final String EMPTY_STRING = "";
-    public static final String TOAST_ERROR_OPERATOR_MSG = "Please insert an operator";
-    public static final String TOAST_MSG_DIVIDE = "Error to divide with a 0";
     public static final String PLUS = "+";
     public static final String MINUS = "-";
     public static final String MULTIPLICATION = "*";

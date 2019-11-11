@@ -17,4 +17,6 @@
     <string name="multiply">*</string>
     <string name="share">/</string>
     <string name="clear">C</string>
+    <string name="toast_error_opeator_msg">Please insert an operator</string>
+    <string name="toast_msg_divide">Error to divide with a 0</string>
 </resources>

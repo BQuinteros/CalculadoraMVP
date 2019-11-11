@@ -9,9 +9,6 @@ import com.example.calculadoramvp.mvp.view.base.ActivityView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.example.calculadoramvp.utils.Utils.TOAST_ERROR_OPERATOR_MSG;
-import static com.example.calculadoramvp.utils.Utils.TOAST_MSG_DIVIDE;
-
 public class CalculatorView extends ActivityView {
 
     @BindView(R.id.visor_operation) TextView visorOperation;
@@ -31,10 +28,16 @@ public class CalculatorView extends ActivityView {
     }
 
     public void showMessageOperation(){
-        Toast.makeText( getContext(), TOAST_ERROR_OPERATOR_MSG, Toast.LENGTH_SHORT).show();
+        Activity activity = getActivity();
+        if (activity != null) {
+            Toast.makeText(activity, activity.getResources().getString(R.string.toast_error_opeator_msg), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void showMessageDivide(){
-        Toast.makeText( getContext(), TOAST_MSG_DIVIDE, Toast.LENGTH_SHORT).show();
+        Activity activity = getActivity();
+        if (activity != null) {
+            Toast.makeText(activity, activity.getResources().getString(R.string.toast_msg_divide), Toast.LENGTH_SHORT).show();
+        }
     }
 }
