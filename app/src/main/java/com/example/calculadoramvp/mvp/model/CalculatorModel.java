@@ -34,9 +34,7 @@ public class CalculatorModel {
         this.operator = operator;
     }
 
-    public void setResult(float result) {
-        this.result = result;
-    }
+    public void setResult(float result) { this.result = result; }
 
     public String getFirstOperand() {
         return firstOperand;
