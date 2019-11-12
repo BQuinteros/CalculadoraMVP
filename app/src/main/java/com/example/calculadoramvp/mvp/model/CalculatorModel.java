@@ -20,7 +20,7 @@ public class CalculatorModel {
         firstOperand = EMPTY_STRING;
         secondOperand = EMPTY_STRING;
         operator = EMPTY_STRING;
-        result = 0;
+        result = ZERO_FLOAT;
     }
 
     public void setFirstOperand(String firstOperand) {
