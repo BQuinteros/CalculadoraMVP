@@ -3,7 +3,6 @@ package com.example.calculadoramvp.mvp.view;
 import android.app.Activity;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.view.base.ActivityView;
 import butterknife.BindView;
@@ -23,7 +22,7 @@ public class CalculatorView extends ActivityView {
         visorOperation.setText(visor);
     }
 
-    public void showResult(float result) {
+    public void showResult(String result) {
         visorResult.setText(String.valueOf(result));
     }
 

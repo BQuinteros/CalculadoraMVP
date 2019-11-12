@@ -10,6 +10,7 @@ import static com.example.calculadoramvp.utils.Utils.MINUS;
 import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
 import static com.example.calculadoramvp.utils.Utils.PLUS;
 import static com.example.calculadoramvp.utils.Utils.ZERO;
+import static com.example.calculadoramvp.utils.Utils.ZERO_FLOAT;
 
 public class CalculatorPresenter {
     private CalculatorView view;
@@ -42,17 +43,12 @@ public class CalculatorPresenter {
             if (!model.getFirstOperand().equals(EMPTY_STRING) && model.getSecondOperand().equals(EMPTY_STRING)) {
                 model.setOperator(operator);
                 view.setVisor(model.getFirstOperand() + model.getOperator());
-            }else{
-                if (!model.getFirstOperand().equals(EMPTY_STRING) && !model.getSecondOperand().equals(EMPTY_STRING)){
-                    model.setOperator(operator);
-                    view.setVisor(model.getSecondOperand() + model.getOperator());
-                }
             }
-
         }else {
             view.setVisor(EMPTY_STRING);
             model.setFirstOperand(Float.toString(model.getResult()));
             model.setOperator(operator);
+            model.setResult(ZERO_FLOAT);
             view.setVisor(model.getFirstOperand() + model.getOperator());
         }
     }
@@ -75,16 +71,35 @@ public class CalculatorPresenter {
                     else{
                         view.showMessageOperation(R.string.toast_msg_divide);
                         view.setVisor(EMPTY_STRING);
-                    }
+                        }
                 default:
                     break;
-
             }
-        view.showResult(model.getResult());
+        view.showResult(String.valueOf(model.getResult()));
         model.setSecondOperand(EMPTY_STRING);
         model.setOperator(EMPTY_STRING);
         }
     }
 
+    public void onClearPressed(){
+        if (!model.getSecondOperand().equals(EMPTY_STRING)){
+            model.setSecondOperand(model.getSecondOperand().substring(0,model.getSecondOperand().length()-1));
+            view.setVisor(model.getFirstOperand() + model.getOperator() + model.getSecondOperand());
+        }
+        else if (!model.getOperator().equals(EMPTY_STRING)){
+            model.setOperator(EMPTY_STRING);
+            view.setVisor(model.getFirstOperand());
+        }
+        else if (!model.getFirstOperand().equals(EMPTY_STRING)){
+            model.setFirstOperand(model.getFirstOperand().substring(0,model.getFirstOperand().length()-1));
+            view.setVisor(model.getFirstOperand());
+        }
+    }
+
+    public void onClearAllPressed(){
+        model.cleanVisor();
+        view.setVisor(EMPTY_STRING);
+        view.showResult(EMPTY_STRING);
+    }
 }
 

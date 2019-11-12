@@ -32,7 +32,7 @@ public class CalculatorPresenterTest {
     public void onNumberPressedTest(){
         when(model.getResult()).thenReturn(ONE_FLOAT);
         when(model.getOperator()).thenReturn(EMPTY_STRING);
-
+        presenter.onNumberPressed("1");
         verify(model).cleanVisor();
     }
 }

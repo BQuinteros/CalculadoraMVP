@@ -14,6 +14,7 @@ import static com.example.calculadoramvp.utils.Utils.EIGHT;
 import static com.example.calculadoramvp.utils.Utils.FIVE;
 import static com.example.calculadoramvp.utils.Utils.FOUR;
 import static com.example.calculadoramvp.utils.Utils.MINUS;
+import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
 import static com.example.calculadoramvp.utils.Utils.NINE;
 import static com.example.calculadoramvp.utils.Utils.ONE;
 import static com.example.calculadoramvp.utils.Utils.PLUS;
@@ -85,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.button_equal)
-    public void onButtonEqualPressed(){ presenter.onEqualsPressed(); }
+    public void onButtonEqualPressed(){
+        presenter.onEqualsPressed();
+    }
 
     @OnClick(R.id.button_share)
     public void onButtonDividePressed(){
@@ -101,6 +104,22 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonPointPressed(){ presenter.onOperatorPressed(POINT); }
 
     @OnClick(R.id.button_subtract)
-    public void onButtonSubtractPressed(){ presenter.onOperatorPressed(MINUS); }
+    public void onButtonSubtractPressed(){
+        presenter.onOperatorPressed(MINUS);
+    }
 
+    @OnClick(R.id.button_multiply)
+    public void onButtonMultiplyPressed(){
+        presenter.onOperatorPressed(MULTIPLICATION);
+    }
+
+    @OnClick(R.id.button_clear)
+    public void onButtonClearPressed(){
+        presenter.onClearPressed();
+    }
+
+    @OnClick(R.id.button_clear_all)
+    public void onButtonClearALlPressed(){
+        presenter.onClearAllPressed();
+    }
 }
