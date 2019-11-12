@@ -78,4 +78,11 @@ public class CalculatorPresenterTest {
         verify(model,times(0)).cleanVisor();
         verify(model).setSecondOperand(ONE_STRING + ONE_STRING);
     }
+
+    @Test
+    public void onClearAllPressedTest(){
+        presenter.onClearAllPressed();
+        verify(model, times(1)).cleanVisor();
+        verify(view).setVisor(EMPTY_STRING);
+    }
 }
