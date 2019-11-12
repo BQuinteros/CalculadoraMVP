@@ -28,11 +28,12 @@ public class CalculatorPresenterTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        presenter = new CalculatorPresenter(model, view);
         when(model.getFirstOperand()).thenReturn(EMPTY_STRING);
         when(model.getSecondOperand()).thenReturn(EMPTY_STRING);
         when(model.getResult()).thenReturn(ZERO_FLOAT);
         when(model.getOperator()).thenReturn(EMPTY_STRING);
+
+        presenter = new CalculatorPresenter(model, view);
     }
 
     @Test
@@ -40,21 +41,16 @@ public class CalculatorPresenterTest {
         when(model.getResult()).thenReturn(ONE_FLOAT);
         presenter.onNumberPressed(ONE_STRING);
         verify(model).cleanVisor();
-
         verify(model).setFirstOperand(ONE_STRING);
-        when(model.getFirstOperand()).thenReturn(ONE_STRING);
-        assertEquals(model.getFirstOperand(),ONE_STRING);
     }
 
     @Test
     public void onNumberPressedTestResultIsDistinctZeroAndHaveFirstOperand(){
         when(model.getResult()).thenReturn(ONE_FLOAT);
+        when(model.getFirstOperand()).thenReturn(ONE_STRING);
         presenter.onNumberPressed(ONE_STRING);
         verify(model).cleanVisor();
-
-        verify(model).setFirstOperand(ONE_STRING);
-        when(model.getFirstOperand()).thenReturn(ONE_STRING);
-        assertEquals(model.getFirstOperand(),ONE_STRING);
+        verify(model).setFirstOperand(ONE_STRING + ONE_STRING);
     }
 
     @Test
@@ -62,10 +58,7 @@ public class CalculatorPresenterTest {
         when(model.getResult()).thenReturn(ZERO_FLOAT);
         presenter.onNumberPressed(ONE_STRING);
         verify(model,times(0)).cleanVisor();
-
         verify(model).setFirstOperand(ONE_STRING);
-        when(model.getFirstOperand()).thenReturn(ONE_STRING);
-        assertEquals(model.getFirstOperand(),ONE_STRING);
     }
 
     @Test
@@ -74,20 +67,15 @@ public class CalculatorPresenterTest {
         when(model.getResult()).thenReturn(ZERO_FLOAT);
         presenter.onNumberPressed(ONE_STRING);
         verify(model,times(0)).cleanVisor();
-
         verify(model).setFirstOperand(ONE_STRING + ONE_STRING);
-        when(model.getFirstOperand()).thenReturn(ONE_STRING + ONE_STRING);
-        assertEquals(model.getFirstOperand(),ONE_STRING + ONE_STRING);
     }
 
     @Test
     public void onNumberPressedTestResultIsZeroAndHaveOperator(){
         when(model.getOperator()).thenReturn(PLUS);
+        when(model.getSecondOperand()).thenReturn(ONE_STRING);
         presenter.onNumberPressed(ONE_STRING);
         verify(model,times(0)).cleanVisor();
-
-        verify(model).setSecondOperand(ONE_STRING);
-        when(model.getSecondOperand()).thenReturn(ONE_STRING);
-        assertEquals(model.getSecondOperand(),ONE_STRING);
+        verify(model).setSecondOperand(ONE_STRING + ONE_STRING);
     }
 }
