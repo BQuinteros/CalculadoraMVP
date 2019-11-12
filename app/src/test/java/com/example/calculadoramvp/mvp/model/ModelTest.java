@@ -24,31 +24,26 @@ public class ModelTest {
     @Test
     public void cleanVisorTest(){
         mockModel.cleanVisor();
-
         assertEquals(EMPTY_STRING, mockModel.getFirstOperand());
         assertEquals(EMPTY_STRING, mockModel.getSecondOperand());
         assertEquals(EMPTY_STRING, mockModel.getOperator());
         assertEquals(ZERO_FLOAT, mockModel.getResult());
     }
-
     @Test
     public void operatorTest(){
         mockModel.setOperator(PLUS);
         assertEquals(PLUS, mockModel.getOperator());
     }
-
     @Test
     public void firstOperandTest(){
         mockModel.setFirstOperand(ONE);
         assertEquals(ONE, mockModel.getFirstOperand());
     }
-
     @Test
     public void secondOperandTest(){
         mockModel.setSecondOperand(TWO);
         assertEquals(TWO, mockModel.getSecondOperand());
     }
-
     @Test
     public void resultTest(){
         mockModel.setResult(ZERO_FLOAT);
