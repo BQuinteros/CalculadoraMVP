@@ -1,6 +1,7 @@
 package com.example.calculadoramvp.mvp.model;
 
 import static com.example.calculadoramvp.utils.Utils.EMPTY_STRING;
+import static com.example.calculadoramvp.utils.Utils.ZERO_FLOAT;
 
 public class CalculatorModel {
     private String firstOperand;
@@ -8,14 +9,14 @@ public class CalculatorModel {
     private String operator;
     private float result;
 
-    public void cleanVisor() {
+    public CalculatorModel(){
         firstOperand = EMPTY_STRING;
         secondOperand = EMPTY_STRING;
         operator = EMPTY_STRING;
-        result = 0;
+        result = ZERO_FLOAT;
     }
 
-    public CalculatorModel(){
+    public void cleanVisor() {
         firstOperand = EMPTY_STRING;
         secondOperand = EMPTY_STRING;
         operator = EMPTY_STRING;
