@@ -1,8 +1,8 @@
 package com.example.calculadoramvp.mvp.presenter;
 
+import com.example.calculadoramvp.R;
 import com.example.calculadoramvp.mvp.model.CalculatorModel;
 import com.example.calculadoramvp.mvp.view.CalculatorView;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -13,7 +13,6 @@ import static com.example.calculadoramvp.utils.Utils.FOUR;
 import static com.example.calculadoramvp.utils.Utils.MINUS;
 import static com.example.calculadoramvp.utils.Utils.MULTIPLICATION;
 import static com.example.calculadoramvp.utils.Utils.ONE;
-import static com.example.calculadoramvp.utils.Utils.PLUS;
 import static com.example.calculadoramvp.utils.Utils.THREE;
 import static com.example.calculadoramvp.utils.Utils.TWO;
 import static com.example.calculadoramvp.utils.Utils.ZERO;
@@ -44,7 +43,6 @@ public class CalculatorPresenterTest {
         when(model.getSecondOperand()).thenReturn(EMPTY_STRING);
         when(model.getResult()).thenReturn(ZERO_FLOAT);
         when(model.getOperator()).thenReturn(EMPTY_STRING);
-
         presenter = new CalculatorPresenter(model, view);
     }
 
@@ -89,13 +87,6 @@ public class CalculatorPresenterTest {
         presenter.onNumberPressed(ONE_STRING);
         verify(model,times(0)).cleanVisor();
         verify(model).setSecondOperand(ONE_STRING + ONE_STRING);
-    }
-
-    @Test
-    public void onClearAllPressedTest(){
-        presenter.onClearAllPressed();
-        verify(model, times(1)).cleanVisor();
-        verify(view).setVisor(EMPTY_STRING);
     }
 
     @Test
@@ -201,6 +192,12 @@ public class CalculatorPresenterTest {
         presenter.onClearPressed();
         verify(model).setFirstOperand(EMPTY_STRING);
         verify(view).setVisor(model.getFirstOperand());
+    }
 
+    @Test
+    public void onClearAllPressedTest(){
+        presenter.onClearAllPressed();
+        verify(model, times(1)).cleanVisor();
+        verify(view).setVisor(EMPTY_STRING);
     }
 }
