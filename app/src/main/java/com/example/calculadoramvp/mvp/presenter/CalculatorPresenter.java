@@ -39,7 +39,7 @@ public class CalculatorPresenter {
     }
 
     public void onOperatorPressed(String operator) {
-        if (model.getResult() == 0) {
+        if (model.getResult() == ZERO_FLOAT) {
             if (!model.getFirstOperand().equals(EMPTY_STRING) && model.getSecondOperand().equals(EMPTY_STRING)) {
                 model.setOperator(operator);
                 view.setVisor(model.getFirstOperand() + model.getOperator());
